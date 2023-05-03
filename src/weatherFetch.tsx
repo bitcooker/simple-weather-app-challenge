@@ -7,7 +7,7 @@ import { WiHumidity } from "react-icons/wi";
 
 import { WeatherDataType } from "./types";
 
-const countryLists = ["NewYork", "London", "Paris", "Tokyo"];
+const countryLists = ["New York", "London", "Paris", "Tokyo"];
 
 export const WeatherFetch: React.FC = () => {
   const key = process.env.REACT_APP_WEATHER_API_KEY;
@@ -38,11 +38,11 @@ export const WeatherFetch: React.FC = () => {
   };
 
   return (
-    <div className="card border border-black/5 rounded-lg shadow-lg bg-slate-100 p-10 flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-5 p-10 border rounded-lg shadow-lg card border-black/5 bg-slate-100">
       {(weatherdata && (
         <>
-          <div className="w-full flex items-center gap-5">
-            <div className="w-full shadow-lg rounded-lg">
+          <div className="flex items-center w-full gap-5">
+            <div className="w-full rounded-lg shadow-lg">
               <select
                 onChange={(e) => {
                   setCountry(e.target.value);

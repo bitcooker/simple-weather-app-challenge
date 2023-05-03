@@ -10,16 +10,15 @@ import { WeatherDataType } from "./types";
 const countryLists = ["New York", "London", "Paris", "Tokyo"];
 
 export const WeatherFetch: React.FC = () => {
-  const key = process.env.REACT_APP_WEATHER_API_KEY;
   const [iconUrl, setIconUrl] = useState("");
-  const [country, setCountry] = useState("USA");
+  const [country, setCountry] = useState("");
   const [weatherdata, setWeatherData] = useState<WeatherDataType | undefined>(
     undefined
   );
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchWeatherData(country);
+    fetchWeatherData("New York");
   }, []);
 
   const fetchWeatherData = (country?: string) => {
@@ -39,7 +38,7 @@ export const WeatherFetch: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center gap-5 p-10 border rounded-lg shadow-lg card border-black/5 bg-slate-100">
-      {(weatherdata && (
+      {( weatherdata && Object.keys(weatherdata).length && (
         <>
           <div className="flex items-center w-full gap-5">
             <div className="w-full rounded-lg shadow-lg">
@@ -52,7 +51,7 @@ export const WeatherFetch: React.FC = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 {countryLists?.map((item) => (
-                  <option value={item}>{item}</option>
+                  <option key={uuidv4()} value={item}>{item}</option>
                 ))}
               </select>
             </div>

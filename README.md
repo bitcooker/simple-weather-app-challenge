@@ -10,5 +10,5 @@ Button component is more to see if they think of all cases. e.g. button disable 
 -   Open Weather Map
 
 ## How to run
-<code>npm install</code>
+<code>npm install</code> <br>
 <code>npm start</code>

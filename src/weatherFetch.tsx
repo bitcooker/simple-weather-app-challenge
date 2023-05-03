@@ -11,7 +11,7 @@ const countryLists = ["New York", "London", "Paris", "Tokyo"];
 
 export const WeatherFetch: React.FC = () => {
   const [iconUrl, setIconUrl] = useState("");
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("New York");
   const [weatherdata, setWeatherData] = useState<WeatherDataType | undefined>(
     undefined
   );
